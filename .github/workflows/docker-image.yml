@@ -23,7 +23,7 @@ jobs:
       - name: Build Docker image
         run: |
           IMAGE_TAG=${{ secrets.IMAGE_TAG }}-v${{ github.run_number }}
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/${IMAGE_TAG} -f ./project-directory/Dockerfile .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/${IMAGE_TAG}  .
           echo "IMAGE_TAG=${IMAGE_TAG}" >> $GITHUB_ENV
 
       - name: Push Docker image
